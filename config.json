@@ -1,0 +1,30 @@
+{
+  "blog_url": "https://freesteamkeyalma.blogspot.com/",
+  "notification_email": "trtoplist@gmail.com",
+  "timezone": "Europe/Istanbul",
+  "gamerpower_attribution_url": "https://www.gamerpower.com/",
+  "platforms": [
+    "steam",
+    "epic-games-store",
+    "gog",
+    "itchio",
+    "ps4",
+    "ps5",
+    "xbox-one",
+    "xbox-series-xs",
+    "pc"
+  ],
+  "include_types": [
+    "game",
+    "loot",
+    "beta"
+  ],
+  "max_posts_per_run": 12,
+  "minimum_description_chars": 50,
+  "include_images": true,
+  "require_verified_membership_label": true,
+  "campaign_safety_hours": 2,
+  "genre_labels": {
+    "default": "Türü Belirtilmemiş"
+  }
+}
