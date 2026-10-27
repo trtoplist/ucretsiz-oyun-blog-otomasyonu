@@ -173,8 +173,18 @@ def source_epic(seen: dict[str, Any], problems: list[str]) -> list[Offer]:
             image = next((str(img.get("url")) for img in item.get("keyImages", []) if img.get("url")), "")
             if not is_https_url(image, EPIC_IMAGE_HOSTS):
                 image = ""
-            oid = f"epic:{item.get('id') or item.get('namespace') or mapping['pageSlug']}"
+            # Include the promotion window: the same game can be drafted again when Epic makes it free in a later campaign.
+            base_id = f"epic:{item.get('id') or item.get('namespace') or mapping['pageSlug']}"
+            oid = f"{base_id}:{start.isoformat()}:{end.isoformat()}"
             if oid in seen:
+                continue
+            # Migrate a previously processed legacy game-only ID: skip the currently active campaign once,
+            # then future campaigns with different dates get their own ID and can be drafted.
+            if base_id in seen:
+                seen[oid] = {
+                    "title": title, "created_at": now.isoformat(), "url": url,
+                    "dedupe_migration": "existing campaign suppressed during campaign-ID migration",
+                }
                 continue
             requirements_obj = item.get("pcRequirements") or {}
             req = clean_html(requirements_obj.get("minimum") or "")
