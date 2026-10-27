@@ -16,7 +16,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Kaynak kodunu al
         uses: actions/checkout@v4
@@ -52,7 +52,8 @@ jobs:
           {
             echo "## Ücretsiz oyun kontrolü"
             echo "- Durum: ${{ job.status }}"
-            echo "- Blogger taslakları: Blogger yönetim panelindeki Taslaklar bölümünü kontrol edin."
-            echo "- Yeni oyun bildirimleri ve inceleme notları bu çalıştırmanın log/özet alanında görünür."
-            echo "- E-posta gönderimi bu pakette etkin değildir."
+            echo "- Kaynak özeti ve oluşturulan taslaklar üstte listelenir. Blogger > Taslaklar bölümünden inceleyin."
+            echo "- Yalnızca Blogger taslağı oluşturulur; hiçbir içerik kendiliğinden yayımlanmaz."
+            echo "- E-posta bildirimi başarıyla tamamlanan her çalıştırma için garanti edilmez; GitHub bildirim ayarları ayrıca yapılandırılmalıdır."
           } >> "$GITHUB_STEP_SUMMARY"
+
