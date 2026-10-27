@@ -354,9 +354,11 @@ def translate_description(text: str, used_today: int) -> tuple[str | None, int, 
 def build_content(offer: Offer, timezone_name: str) -> tuple[str, list[str], str]:
     tz = ZoneInfo(timezone_name)
     end_text = offer.end_at.astimezone(tz).strftime("%d.%m.%Y %H:%M (Türkiye saati)") if offer.end_at else "Bitiş tarihi yok; mağaza oyunu süresiz ücretsiz listeliyor."
+    seo_summary = search_description(offer, timezone_name)
     labels = [offer.store, genre_label(offer), "Ücretsiz Oyun", "Süresiz Ücretsiz" if offer.end_at is None else "Süreli Kampanya"]
     parts = [
         f"<p><strong>⚠️ {html.escape(offer.offer_type)}. Tanıtım: {html.escape(offer.translation_status or 'Türkçe mağaza metni')}. Bu çeviri, oyunun Türkçe dil desteği olduğu anlamına gelmez. {html.escape(offer.language_support)} Bölge ve hesap koşulları değişebilir.</strong></p>",
+        f"<p><strong>Kısa özet:</strong> {html.escape(seo_summary)}</p>",
         f"<p><strong>Mağaza:</strong> {html.escape(offer.store)} · <strong>Tür:</strong> {html.escape(genre_label(offer))}</p>",
         "<h2>Oyun hakkında</h2>",
         f"<p>{html.escape(offer.description)}</p>",
@@ -374,6 +376,17 @@ def build_content(offer: Offer, timezone_name: str) -> tuple[str, list[str], str
     return "\n".join(parts), labels, "Taslak; kontrol ve onay bekliyor."
 
 
+def search_description(offer: Offer, timezone_name: str = "Europe/Istanbul") -> str:
+    """Generate Blogger's suggested search snippet; the official API cannot set this editor field."""
+    if offer.end_at:
+        end_text = offer.end_at.astimezone(ZoneInfo(timezone_name)).strftime("%d.%m.%Y")
+        raw = f"{offer.title}: {offer.store} üzerinde ücretsiz kampanya {end_text} tarihine kadar. Türkçe tanıtım ve alma rehberi."
+    else:
+        raw = f"{offer.title}: {offer.store} üzerinde süresiz ücretsiz oyun. Türkçe tanıtım ve alma rehberi."
+    value = re.sub(r"\s+", " ", raw).strip()
+    return value[:150].rstrip()
+
+
 def blogger_service() -> Any:
     creds = Credentials(
         token=None,
@@ -389,10 +402,8 @@ def blogger_service() -> Any:
 
 def create_draft(service: Any, blog_id: str, offer: Offer, content: str, labels: list[str]) -> str:
     title = f"{offer.title} ücretsiz: {offer.store} fırsatı"
-    search_description = f"{offer.title} ücretsiz oyun fırsatı: {offer.store} kampanya koşulları, bitiş tarihi ve alma rehberi."
     payload = {
         "kind": "blogger#post", "title": title, "content": content, "labels": labels,
-        "customMetaData": json.dumps({"description": search_description[:150]}, ensure_ascii=False),
     }
     result = service.posts().insert(blogId=blog_id, body=payload, isDraft=True).execute(num_retries=5)
     return str(result.get("url") or result.get("id") or "Taslak oluşturuldu")
@@ -466,7 +477,12 @@ def main() -> int:
     if summary_path:
         with open(summary_path, "a", encoding="utf-8") as summary:
             summary.write("\n## Ücretsiz oyun kontrolü\n")
-            summary.write("\n".join(f"- Taslak: {title}" for title in created_titles) if created_titles else "- Yeni uygun oyun yok; taslak oluşturulmadı.")
+            if created_titles:
+                for offer in safe:
+                    if offer.title in created_titles:
+                        summary.write(f"- Taslak: {offer.title}\n  - Blogger arama açıklaması önerisi: {search_description(offer, config.get('timezone', 'Europe/Istanbul'))}\n")
+            else:
+                summary.write("- Yeni uygun oyun yok; taslak oluşturulmadı.")
             summary.write("\n\n- Yalnızca resmî Steam ve Epic Games kaynakları etkin.\n")
             if problems:
                 summary.write("- Kaynak notları: " + "; ".join(problems) + "\n")
