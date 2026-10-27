@@ -185,6 +185,7 @@ def source_epic(seen: dict[str, Any], problems: list[str]) -> list[Offer]:
                     "title": title, "created_at": now.isoformat(), "url": url,
                     "dedupe_migration": "existing campaign suppressed during campaign-ID migration",
                 }
+                seen.pop(base_id, None)
                 continue
             requirements_obj = item.get("pcRequirements") or {}
             req = clean_html(requirements_obj.get("minimum") or "")
