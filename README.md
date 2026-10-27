@@ -1,6 +1,6 @@
 # Ücretsiz Oyun Blogger Taslak Otomasyonu
 
-Bu paket, `freesteamkeyalma.blogspot.com` için günde iki kez resmî oyun mağazalarını kontrol eder ve doğruladığı yeni oyunlar için Blogger'da **taslak** oluşturur. Otomatik yayımlama yoktur. İlk denemeden önce bu klasördeki `config.json` değerlerini inceleyin.
+Bu paket, `freesteamkeyalma.blogspot.com` için günde dört kez resmî oyun mağazalarını kontrol eder ve doğruladığı yeni oyunlar için Blogger'da **taslak** oluşturur. Otomatik yayımlama yoktur. İlk denemeden önce bu klasördeki `config.json` değerlerini inceleyin.
 
 ## Şu an gerçekten desteklenen kaynaklar
 
@@ -20,13 +20,13 @@ Diğer istenen mağazalar (GOG, Prime Gaming, itch.io, Ubisoft Connect, EA app, 
 - Mağaza görseli yalnızca resmî mağaza görsel hostundan alınır. Görsel yoksa görsel bölümü atlanır.
 - Taslaklarda Türkçe tanıtım, mağaza bağlantısı, nasıl alınır, bilinen sistem gereksinimleri ve otomatik etiketler (mağaza, tür, ücretsiz oyun, kampanya türü) yer alır. Başlık ve kalıcı bağlantı başlığa göre hazırlanır. Mağaza görsellerine alt metin eklenir.
 - Blogger API v3, yazı düzenleyicisindeki "Arama Açıklaması" alanını desteklemiyor; `customMetaData` API'de kullanılmıyor. Bu nedenle otomasyon API üzerinden bu alanı dolduramaz. Kısa SEO açıklaması taslak gövdesinin başında ve yeni taslak oluştuğunda Actions özetinde "Blogger arama açıklaması önerisi" olarak gösterilir. Arzu edersen bu metni Blogger'daki Arama Açıklaması alanına elle kopyalayabilirsin. Google, arama sonucunda bu açıklamayı kullanmayı garanti etmez.
-- `data/seen.json` kimlikleri saklayarak aynı oyunun tekrar taslak olmasını önler.
+- Tekilleştirme kampanya bazındadır: Epic için aynı oyunun aynı ücretsiz dönem başlangıç/bitiş tarihleri tekrar taslak olmaz; Epic oyunu daha sonra farklı tarihlerle yeniden ücretsiz verirse yeni kampanya olarak taslaklanabilir. Süresiz Steam F2P oyunları Steam App ID ile tekilleştirilir ve tekrar taslaklanmaz. Eski Epic oyun-kimliği kayıtları yeni kampanya anahtarına bir kez taşınır; geçiş sırasında mevcut kampanya tekrar yayımlanmaz.
 - Blogger'a yayımlanmadan önce çeviri metnini, dil desteği bilgisini ve mağaza koşullarını taslakta kontrol edin.
 - Her çalıştırmada en fazla 3 taslak oluşturulur.
 
 ## Ücretsiz çalışma
 
-GitHub Actions zamanlaması günde iki kez UTC 07:00 ve 19:00'dadır (Türkiye'de yaklaşık 10:00 ve 22:00). GitHub zamanlamaları gecikebilir. Herkese açık depoda kod herkese görünür; kod içinde parola veya OAuth değeri bulunmaz. Actions ücretsiz kullanımı GitHub planı ve güncel kullanım sınırlarına tabidir.
+GitHub Actions zamanlaması günde dört kez UTC 01:00, 07:00, 13:00 ve 19:00'dadır (Türkiye'de yaklaşık 04:00, 10:00, 16:00 ve 22:00). GitHub zamanlamaları gecikebilir. GitHub zamanlamaları gecikebilir. Herkese açık depoda kod herkese görünür; kod içinde parola veya OAuth değeri bulunmaz. Actions ücretsiz kullanımı GitHub planı ve güncel kullanım sınırlarına tabidir.
 
 GitHub'da **Settings → Notifications → Actions** altında e-posta bildirimini açıp yalnızca başarısız çalışmalar seçeneğini kapatırsanız iş akışı tamamlandığında e-posta alabilirsiniz. Zamanlanmış çalışmaların bildirimi, iş akışını etkinleştiren GitHub kullanıcısına gönderilir. Her yeni taslak için ek bir e-posta servisi kullanılmaz.
 
