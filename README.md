@@ -18,7 +18,8 @@ Diğer istenen mağazalar (GOG, Prime Gaming, itch.io, Ubisoft Connect, EA app, 
 - Süreli Epic teklifi bitiş tarihini Türkiye saatinde yazar; bitmek üzere olan fırsat taslak yapılmaz. Süresiz Steam F2P oyunu açıkça “Süresiz ücretsiz (oynaması ücretsiz)” diye tanımlar.
 - Üyelik şartı kaynaktan doğrulanamıyorsa üyelik gerektiren teklif otomatik yazılmaz. Bu nedenle Game Pass/Prime/PS Plus içeriği mevcut sürümde dâhil değildir.
 - Mağaza görseli yalnızca resmî mağaza görsel hostundan alınır. Görsel yoksa görsel bölümü atlanır.
-- Taslaklarda Türkçe tanıtım, mağaza bağlantısı, nasıl alınır, bilinen sistem gereksinimleri ve otomatik etiketler (mağaza, tür, ücretsiz oyun, kampanya türü) yer alır. Başlık ve arama açıklaması hazırlanır; Blogger URL/kalıcı bağlantısını başlığa göre kendisi üretir. Mağaza görsellerine alt metin eklenir.
+- Taslaklarda Türkçe tanıtım, mağaza bağlantısı, nasıl alınır, bilinen sistem gereksinimleri ve otomatik etiketler (mağaza, tür, ücretsiz oyun, kampanya türü) yer alır. Başlık ve kalıcı bağlantı başlığa göre hazırlanır. Mağaza görsellerine alt metin eklenir.
+- Blogger API v3, yazı düzenleyicisindeki "Arama Açıklaması" alanını desteklemiyor; `customMetaData` API'de kullanılmıyor. Bu nedenle otomasyon API üzerinden bu alanı dolduramaz. Kısa SEO açıklaması taslak gövdesinin başında ve yeni taslak oluştuğunda Actions özetinde "Blogger arama açıklaması önerisi" olarak gösterilir. Arzu edersen bu metni Blogger'daki Arama Açıklaması alanına elle kopyalayabilirsin. Google, arama sonucunda bu açıklamayı kullanmayı garanti etmez.
 - `data/seen.json` kimlikleri saklayarak aynı oyunun tekrar taslak olmasını önler.
 - Blogger'a yayımlanmadan önce çeviri metnini, dil desteği bilgisini ve mağaza koşullarını taslakta kontrol edin.
 - Her çalıştırmada en fazla 3 taslak oluşturulur.
