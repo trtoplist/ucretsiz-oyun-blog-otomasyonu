@@ -1,0 +1,58 @@
+name: Ücretsiz oyunları kontrol et
+
+on:
+  schedule:
+    # GitHub Actions schedule uses UTC and may be delayed by platform load.
+    - cron: "0 7,19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: free-game-daily-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Kaynak kodunu al
+        uses: actions/checkout@v4
+      - name: Python ortamını hazırla
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Bağımlılıkları kur
+        run: pip install -r requirements.txt
+      - name: Blogger taslaklarını oluştur
+        env:
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: python -m src.pipeline
+      - name: Tekrarları önleme kaydını sakla
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/seen.json
+          if git diff --cached --quiet; then
+            echo "Yeni teklif kaydı yok."
+          else
+            git commit -m "Update processed offer IDs"
+            git push
+          fi
+      - name: Çalıştırma özeti
+        if: always()
+        run: |
+          {
+            echo "## Ücretsiz oyun kontrolü"
+            echo "- Durum: ${{ job.status }}"
+            echo "- Blogger taslakları: Blogger yönetim panelindeki Taslaklar bölümünü kontrol edin."
+            echo "- Yeni oyun bildirimleri ve inceleme notları bu çalıştırmanın log/özet alanında görünür."
+            echo "- E-posta gönderimi bu pakette etkin değildir."
+          } >> "$GITHUB_STEP_SUMMARY"
