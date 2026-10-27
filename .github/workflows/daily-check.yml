@@ -3,7 +3,7 @@ name: Ücretsiz oyunları kontrol et
 on:
   schedule:
     # GitHub Actions schedule uses UTC and may be delayed by platform load.
-    - cron: "0 7,19 * * *"
+    - cron: "0 1,7,13,19 * * *"
   workflow_dispatch:
 
 permissions:
@@ -56,4 +56,3 @@ jobs:
             echo "- Yalnızca Blogger taslağı oluşturulur; hiçbir içerik kendiliğinden yayımlanmaz."
             echo "- E-posta bildirimi başarıyla tamamlanan her çalıştırma için garanti edilmez; GitHub bildirim ayarları ayrıca yapılandırılmalıdır."
           } >> "$GITHUB_STEP_SUMMARY"
-
