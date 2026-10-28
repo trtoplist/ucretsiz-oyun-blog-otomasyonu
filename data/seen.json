@@ -56,9 +56,24 @@
       "title": "SATRANÇ2",
       "created_at": "2026-10-28T13:42:57.865151+00:00",
       "url": "https://store.steampowered.com/app/4997370/"
+    },
+    "steam:5256250": {
+      "title": "FableBrawl",
+      "created_at": "2026-10-28T22:56:02.956975+00:00",
+      "url": "https://store.steampowered.com/app/5256250/"
+    },
+    "steam:5191970": {
+      "title": "Mimic2 - Idle MMORPG",
+      "created_at": "2026-10-28T22:56:02.956975+00:00",
+      "url": "https://store.steampowered.com/app/5191970/"
+    },
+    "steam:5036700": {
+      "title": "Pixel Coloring World",
+      "created_at": "2026-10-28T22:56:02.956975+00:00",
+      "url": "https://store.steampowered.com/app/5036700/"
     }
   },
   "translation_usage": {
-    "2026-10-28": 0
+    "2026-10-28": 453
   }
 }
