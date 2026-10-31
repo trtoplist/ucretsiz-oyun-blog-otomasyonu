@@ -121,9 +121,19 @@
       "title": "Blooby Idle",
       "created_at": "2026-10-30T22:45:15.157516+00:00",
       "url": "https://store.steampowered.com/app/5168580/"
+    },
+    "steam:3613080": {
+      "title": "Bot Colony _redux",
+      "created_at": "2026-10-31T06:32:47.894031+00:00",
+      "url": "https://store.steampowered.com/app/3613080/"
+    },
+    "steam:4492040": {
+      "title": "Restless Rites - Prologue",
+      "created_at": "2026-10-31T06:32:47.894031+00:00",
+      "url": "https://store.steampowered.com/app/4492040/"
     }
   },
   "translation_usage": {
-    "2026-10-30": 496
+    "2026-10-31": 372
   }
 }
