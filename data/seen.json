@@ -191,9 +191,14 @@
       "title": "DeskHugs: Desktop Friends",
       "created_at": "2026-11-07T22:28:19.721587+00:00",
       "url": "https://store.steampowered.com/app/5325220/"
+    },
+    "steam:4986330": {
+      "title": "Handsy",
+      "created_at": "2026-11-09T07:32:12.710867+00:00",
+      "url": "https://store.steampowered.com/app/4986330/"
     }
   },
   "translation_usage": {
-    "2026-11-08": 0
+    "2026-11-09": 229
   }
 }
