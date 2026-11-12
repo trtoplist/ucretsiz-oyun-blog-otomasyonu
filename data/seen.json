@@ -221,9 +221,14 @@
       "title": "Pop! Jelly PangPang",
       "created_at": "2026-11-11T19:57:39.830146+00:00",
       "url": "https://store.steampowered.com/app/5396440/"
+    },
+    "steam:5135440": {
+      "title": "DPS: Desktop Pension Squad",
+      "created_at": "2026-11-12T07:54:10.469224+00:00",
+      "url": "https://store.steampowered.com/app/5135440/"
     }
   },
   "translation_usage": {
-    "2026-11-11": 0
+    "2026-11-12": 0
   }
 }
