@@ -226,9 +226,24 @@
       "title": "DPS: Desktop Pension Squad",
       "created_at": "2026-11-12T07:54:10.469224+00:00",
       "url": "https://store.steampowered.com/app/5135440/"
+    },
+    "epic:9975548b6d404a94b8a9bdb34cad49e9:2026-11-12T16:00:00+00:00:2026-11-19T16:00:00+00:00": {
+      "title": "Knightica",
+      "created_at": "2026-11-12T16:29:15.957814+00:00",
+      "url": "https://store.epicgames.com/tr/p/knightica-3be45c"
+    },
+    "steam:5283320": {
+      "title": "Quarantine Zombies - Prologue 2",
+      "created_at": "2026-11-12T16:29:15.957814+00:00",
+      "url": "https://store.steampowered.com/app/5283320/"
+    },
+    "steam:5186400": {
+      "title": "687 Days on Mars - First Steps",
+      "created_at": "2026-11-12T16:29:15.957814+00:00",
+      "url": "https://store.steampowered.com/app/5186400/"
     }
   },
   "translation_usage": {
-    "2026-11-12": 0
+    "2026-11-12": 287
   }
 }
