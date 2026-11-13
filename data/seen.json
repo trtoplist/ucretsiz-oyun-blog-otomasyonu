@@ -246,9 +246,14 @@
       "title": "There's a Cat in My PC",
       "created_at": "2026-11-12T20:37:27.614814+00:00",
       "url": "https://store.steampowered.com/app/5220530/"
+    },
+    "steam:5496510": {
+      "title": "GOALTURN",
+      "created_at": "2026-11-13T07:32:05.221242+00:00",
+      "url": "https://store.steampowered.com/app/5496510/"
     }
   },
   "translation_usage": {
-    "2026-11-12": 287
+    "2026-11-13": 0
   }
 }
