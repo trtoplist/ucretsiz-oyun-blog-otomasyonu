@@ -281,9 +281,24 @@
       "title": "Senin… bitkilerini görebilir miyim?",
       "created_at": "2026-11-16T07:32:09.022955+00:00",
       "url": "https://store.steampowered.com/app/5048390/"
+    },
+    "steam:5239180": {
+      "title": "Threshold Zero",
+      "created_at": "2026-11-16T22:42:13.561956+00:00",
+      "url": "https://store.steampowered.com/app/5239180/"
+    },
+    "steam:5465830": {
+      "title": "Banner Age",
+      "created_at": "2026-11-16T22:42:13.561956+00:00",
+      "url": "https://store.steampowered.com/app/5465830/"
+    },
+    "steam:5515850": {
+      "title": "Gramps & Whiskers",
+      "created_at": "2026-11-16T22:42:13.561956+00:00",
+      "url": "https://store.steampowered.com/app/5515850/"
     }
   },
   "translation_usage": {
-    "2026-11-16": 0
+    "2026-11-16": 291
   }
 }
