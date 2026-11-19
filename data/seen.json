@@ -326,9 +326,19 @@
       "title": "Biztopia: Prologue",
       "created_at": "2026-11-18T21:02:29.825518+00:00",
       "url": "https://store.steampowered.com/app/4078690/"
+    },
+    "steam:5033020": {
+      "title": "Xuverse",
+      "created_at": "2026-11-19T08:17:01.448580+00:00",
+      "url": "https://store.steampowered.com/app/5033020/"
+    },
+    "steam:5366290": {
+      "title": "ARES: THE IRON VANGUARD",
+      "created_at": "2026-11-19T08:17:01.448580+00:00",
+      "url": "https://store.steampowered.com/app/5366290/"
     }
   },
   "translation_usage": {
-    "2026-11-18": 0
+    "2026-11-19": 424
   }
 }
