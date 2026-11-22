@@ -356,9 +356,14 @@
       "title": "STRIKERS PRO LEAGUE",
       "created_at": "2026-11-21T19:53:59.121468+00:00",
       "url": "https://store.steampowered.com/app/5478080/"
+    },
+    "steam:3990350": {
+      "title": "Arithmetic Arena",
+      "created_at": "2026-11-22T07:40:38.167523+00:00",
+      "url": "https://store.steampowered.com/app/3990350/"
     }
   },
   "translation_usage": {
-    "2026-11-21": 0
+    "2026-11-22": 0
   }
 }
