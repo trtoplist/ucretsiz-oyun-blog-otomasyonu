@@ -361,9 +361,24 @@
       "title": "Arithmetic Arena",
       "created_at": "2026-11-22T07:40:38.167523+00:00",
       "url": "https://store.steampowered.com/app/3990350/"
+    },
+    "steam:5354090": {
+      "title": "Clash of Boats",
+      "created_at": "2026-11-24T00:31:54.155234+00:00",
+      "url": "https://store.steampowered.com/app/5354090/"
+    },
+    "steam:3026390": {
+      "title": "Bomb And Conquer",
+      "created_at": "2026-11-24T00:31:54.155234+00:00",
+      "url": "https://store.steampowered.com/app/3026390/"
+    },
+    "steam:2928640": {
+      "title": "Countryball: World 1930",
+      "created_at": "2026-11-24T00:31:54.155234+00:00",
+      "url": "https://store.steampowered.com/app/2928640/"
     }
   },
   "translation_usage": {
-    "2026-11-23": 0
+    "2026-11-24": 232
   }
 }
