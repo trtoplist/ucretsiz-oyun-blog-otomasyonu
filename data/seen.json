@@ -376,9 +376,19 @@
       "title": "Countryball: World 1930",
       "created_at": "2026-11-24T00:31:54.155234+00:00",
       "url": "https://store.steampowered.com/app/2928640/"
+    },
+    "steam:5517900": {
+      "title": "Yeat",
+      "created_at": "2026-11-24T10:36:51.232291+00:00",
+      "url": "https://store.steampowered.com/app/5517900/"
+    },
+    "steam:2269500": {
+      "title": "Leap of Legends",
+      "created_at": "2026-11-24T10:36:51.232291+00:00",
+      "url": "https://store.steampowered.com/app/2269500/"
     }
   },
   "translation_usage": {
-    "2026-11-24": 232
+    "2026-11-24": 485
   }
 }
