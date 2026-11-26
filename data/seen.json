@@ -421,9 +421,24 @@
       "title": "Star Imperium",
       "created_at": "2026-11-26T09:05:30.269662+00:00",
       "url": "https://store.steampowered.com/app/5284880/"
+    },
+    "epic:f0a333114190492c84a9decd2bb43875:2026-11-26T16:00:00+00:00:2026-12-03T16:00:00+00:00": {
+      "title": "Bread and Fred",
+      "created_at": "2026-11-26T18:55:12.211193+00:00",
+      "url": "https://store.epicgames.com/tr/p/bread-and-fred-1db362"
+    },
+    "steam:5518570": {
+      "title": "TrapRush",
+      "created_at": "2026-11-26T18:55:12.211193+00:00",
+      "url": "https://store.steampowered.com/app/5518570/"
+    },
+    "steam:5514130": {
+      "title": "Döngüsel Mayın Tarlası",
+      "created_at": "2026-11-26T18:55:12.211193+00:00",
+      "url": "https://store.steampowered.com/app/5514130/"
     }
   },
   "translation_usage": {
-    "2026-11-26": 163
+    "2026-11-26": 689
   }
 }
